@@ -1,0 +1,33 @@
+TOOLKIT PLAN - Python Toolkit
+=============================
+
+1. TOOLS AND WHAT EACH ONE DOES
+-------------------------------
+Tool 1 - Number Guessing Game: The computer picks a secret number from 1 to 20 and I get 6 tries to guess it, with "too high" / "too low" hints.
+Tool 2 - To-Do List: I can add tasks, remove tasks by number and view my list, and the list is kept while the toolkit is running.
+Tool 3 - Simple Calculator: I enter two numbers and an operator (+, -, *, /) and it prints the result, without crashing on bad input or dividing by zero.
+Tool 4 - Name Formatter: I type my name in any messy capitalisation and it shows it neatly formatted, with my initials and the number of letters.
+
+2. EXACT MENU TEXT
+------------------
+==============================
+   PYTHON TOOLKIT MENU
+==============================
+1. Number Guessing Game
+2. To-Do List
+3. Simple Calculator
+4. Name Formatter
+5. Quit
+Choose an option (1-5):
+
+Welcome message: "Welcome to the Python Toolkit! Let's get started."
+Invalid choice:  "Sorry, 'X' is not a valid option. Please pick a number from 1 to 5."
+Goodbye message: "Thanks for using the Python Toolkit. Goodbye!"
+
+3. CONCEPTS EACH TOOL WILL USE
+------------------------------
+Menu loop:        while loop, if / elif / else, f-strings
+Guessing Game:    random module, while loop, if / elif / else, counter variable, f-strings
+To-Do List:       list (append, pop, len), while loop, for loop with numbering, if / elif / else, f-strings
+Calculator:       if / elif / else on the operator, try / except for bad numbers, f-strings
+Name Formatter:   string methods (.strip, .title, .split), for loop to build initials, len(), f-strings

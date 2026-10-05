@@ -1,10 +1,23 @@
-# PLP Python Week 7 - Lists
+# Python Toolkit
 
-- `list_warmup.py` - creates a fruit list and demonstrates index access, `.append()`, `.remove()` and `len()`.
-- `shopping_list.py` - an interactive shopping list menu (add / remove / show / done) that never crashes.
-- `list_report.py` - prints a numbered list, counts names longer than 4 letters, and finds the longest name with a loop.
-- `screenshots/` - screenshots of each program running.
+## What it does
+A menu-driven Python program with four small tools:
 
-## Why check `in` before `.remove()`?
+1. **Number Guessing Game** - guess a secret number from 1 to 20 in 6 tries.
+2. **To-Do List** - add, remove and show tasks; the list is kept until you quit.
+3. **Simple Calculator** - add, subtract, multiply or divide two numbers.
+4. **Name Formatter** - tidies up a name and shows initials and letter count.
 
-Calling `.remove()` on an item that is not in the list raises a `ValueError` and crashes the program. Checking with `in` first lets the program print a friendly message and keep running instead. It makes the code safer because bad user input can never stop the whole session.
+The menu comes back after every tool and handles invalid choices politely until you pick Quit.
+
+## How to run
+Make sure Python 3 is installed, then in a terminal:
+
+```
+python toolkit.py
+```
+
+Type a number from 1 to 5 and press Enter.
+
+## Reflection
+(Write your own 5-8 sentences here: which part was hardest, which bug took longest to fix, and what you would add with one more week.)
