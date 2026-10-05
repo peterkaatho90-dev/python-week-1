@@ -1,0 +1,33 @@
+<!-- Example markup that matches the IDs in script.js.
+     Copy only what your page doesn't already have, or change the IDS
+     at the top of script.js to match the IDs you already use. -->
+
+<label for="budget-input">Monthly budget</label>
+<input type="number" id="budget-input" min="0" step="0.01" value="1000">
+
+<p>Total spent: <span id="total-expenses">$0.00</span></p>
+<p>Remaining: <span id="remaining-budget">$0.00</span></p>
+<p id="budget-status"></p>
+
+<input type="text" id="expense-description" placeholder="Description">
+<input type="number" id="expense-amount" placeholder="Amount" min="0" step="0.01">
+<select id="expense-category">
+  <option>Food</option>
+  <option>Transport</option>
+  <option>Bills</option>
+  <option>Fun</option>
+  <option>Other</option>
+</select>
+<button type="button" id="add-expense-btn">Add expense</button>
+<p id="form-message"></p>
+
+<ul id="expense-list"></ul>
+
+<!-- Load the script at the END of <body>, or add "defer": -->
+<script src="script.js" defer></script>
+
+<!-- Optional CSS for the status message:
+.status-ok { color: green; }
+.status-warning { color: darkorange; }
+.status-over { color: crimson; font-weight: bold; }
+-->
