@@ -1,23 +1,35 @@
-# Python Toolkit
+# SpendWise – Personal Budget Tracker
 
-## What it does
-A menu-driven Python program with four small tools:
+SpendWise is a beginner-friendly personal budgeting website built with HTML, CSS and vanilla JavaScript.
 
-1. **Number Guessing Game** - guess a secret number from 1 to 20 in 6 tries.
-2. **To-Do List** - add, remove and show tasks; the list is kept until you quit.
-3. **Simple Calculator** - add, subtract, multiply or divide two numbers.
-4. **Name Formatter** - tidies up a name and shows initials and letter count.
+## Features
+- Dashboard showing income, expenses and available balance
+- Add income and expense transactions
+- Categorize transactions
+- Filter transactions by type
+- Delete individual transactions
+- Set a monthly spending budget and view progress
+- Saves demo data in the browser using `localStorage`
+- Responsive layout for desktop and mobile screens
 
-The menu comes back after every tool and handles invalid choices politely until you pick Quit.
+## Run locally
+1. Download or clone this repository.
+2. Open `index.html` in a modern web browser.
 
-## How to run
-Make sure Python 3 is installed, then in a terminal:
+No package installation or build command is required.
 
-```
-python toolkit.py
-```
+## Deploy to Netlify
+1. Push the project folder to a public GitHub repository.
+2. In Netlify, choose **Add new project** → **Import an existing project**.
+3. Select the GitHub repository.
+4. Leave the build command blank.
+5. Set the publish directory to `.` (the repository root).
+6. Deploy the site.
 
-Type a number from 1 to 5 and press Enter.
+Netlify will publish the website and provide a `netlify.app` address. Rename the site in Netlify's site configuration/domain management area.
 
-## Reflection
-(Write your own 5-8 sentences here: which part was hardest, which bug took longest to fix, and what you would add with one more week.)
+## Continuous deployment
+When the GitHub repository is connected to Netlify, pushing a commit to the configured production branch triggers a new deployment automatically.
+
+## Important note
+This is a learning/demo project. Data is stored only in the current browser on the current device. It does not have user accounts, cloud synchronization, or bank connections. Do not enter bank login details or sensitive financial information.

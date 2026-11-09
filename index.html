@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SpendWise helps you plan a budget, track spending and build healthy saving habits.">
+  <title>SpendWise | Personal Budget Tracker</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="SpendWise home">
+      <span class="brand-mark">S</span><span>SpendWise</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#dashboard">Dashboard</a>
+      <a href="#transactions">Transactions</a>
+      <a href="#budget">Budget</a>
+    </nav>
+    <button class="button button-outline" id="resetDemo" type="button">Reset demo</button>
+  </header>
+
+  <main class="container">
+    <section class="welcome" id="dashboard">
+      <div>
+        <p class="eyebrow">YOUR MONEY, MADE CLEAR</p>
+        <h1>Welcome to <span>SpendWise.</span></h1>
+        <p class="intro">A simple place to plan your budget, track expenses and keep your savings goals in view.</p>
+      </div>
+      <div class="month-pill"><span class="status-dot"></span> Monthly overview</div>
+    </section>
+
+    <section class="summary-grid" aria-label="Financial summary">
+      <article class="summary-card balance-card">
+        <div class="card-label">Available balance <span class="card-icon">↗</span></div>
+        <p class="amount" id="balanceAmount">KSh 0</p>
+        <p class="card-note">Income minus expenses</p>
+      </article>
+      <article class="summary-card">
+        <div class="card-label">Total income <span class="card-icon income-icon">＋</span></div>
+        <p class="amount" id="incomeAmount">KSh 0</p>
+        <p class="card-note">Money received this month</p>
+      </article>
+      <article class="summary-card">
+        <div class="card-label">Total expenses <span class="card-icon expense-icon">−</span></div>
+        <p class="amount" id="expenseAmount">KSh 0</p>
+        <p class="card-note">Money spent this month</p>
+      </article>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel" id="budget">
+        <div class="panel-heading">
+          <div><p class="eyebrow">PLAN AHEAD</p><h2>Monthly budget</h2></div>
+          <span class="tag">This month</span>
+        </div>
+        <div class="budget-total">
+          <div><span class="muted">Budget limit</span><strong id="budgetLimitLabel">KSh 30,000</strong></div>
+          <div class="spent-label"><span class="muted">Spent</span><strong id="budgetSpentLabel">KSh 0</strong></div>
+        </div>
+        <div class="progress-track"><div class="progress-fill" id="budgetProgress"></div></div>
+        <p class="budget-message" id="budgetMessage">Add expenses to see how your budget is doing.</p>
+        <form id="budgetForm" class="budget-form">
+          <label for="budgetLimit">Change monthly budget (KSh)</label>
+          <div class="inline-form">
+            <input id="budgetLimit" type="number" min="1" step="1" value="30000" required>
+            <button class="button button-dark" type="submit">Update</button>
+          </div>
+        </form>
+      </article>
+
+      <article class="panel quick-add">
+        <div class="panel-heading">
+          <div><p class="eyebrow">KEEP TRACK</p><h2>Add a transaction</h2></div>
+          <span class="add-symbol">＋</span>
+        </div>
+        <form id="transactionForm">
+          <label for="description">Description</label>
+          <input id="description" type="text" maxlength="50" placeholder="e.g. Groceries" required>
+          <div class="form-row">
+            <div>
+              <label for="amount">Amount (KSh)</label>
+              <input id="amount" type="number" min="1" step="1" placeholder="2500" required>
+            </div>
+            <div>
+              <label for="type">Type</label>
+              <select id="type">
+                <option value="expense">Expense</option>
+                <option value="income">Income</option>
+              </select>
+            </div>
+          </div>
+          <label for="category">Category</label>
+          <select id="category">
+            <option>Food</option><option>Transport</option><option>Bills</option>
+            <option>Education</option><option>Shopping</option><option>Salary</option>
+            <option>Other</option>
+          </select>
+          <button class="button button-primary full-button" type="submit">Add transaction</button>
+          <p class="form-hint" id="formMessage" role="status">Your entries stay in this browser on this device.</p>
+        </form>
+      </article>
+    </section>
+
+    <section class="panel transactions-panel" id="transactions">
+      <div class="panel-heading transaction-heading">
+        <div><p class="eyebrow">RECENT ACTIVITY</p><h2>Transactions</h2></div>
+        <label class="filter-label" for="filterType">Show
+          <select id="filterType"><option value="all">All</option><option value="income">Income</option><option value="expense">Expenses</option></select>
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Description</th><th>Category</th><th>Date</th><th>Type</th><th class="align-right">Amount</th><th><span class="sr-only">Action</span></th></tr></thead>
+          <tbody id="transactionList"></tbody>
+        </table>
+        <div class="empty-state" id="emptyState" hidden>
+          <span class="empty-icon">▤</span><strong>No transactions yet</strong>
+          <p>Add your first income or expense using the form above.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tip-banner">
+      <div class="tip-icon">✦</div>
+      <div><strong>A small habit makes a big difference.</strong><p>Record each expense as it happens so you can understand where your money goes.</p></div>
+    </section>
+  </main>
+
+  <footer><span>© <span id="year"></span> SpendWise</span><span>Plan thoughtfully. Spend wisely.</span></footer>
+</body>
+</html>

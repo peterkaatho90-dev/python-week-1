@@ -1,0 +1,150 @@
+:root {
+  --bg: #eef2ee;
+  --surface: #ffffff;
+  --ink: #16202a;
+  --muted: #5d6b76;
+  --line: #d5ddd6;
+  --brand: #0e6b4f;
+  --brand-dark: #0a4f3a;
+  --warn: #b7791f;
+  --warn-bg: #fdf3dc;
+  --danger: #b42318;
+  --danger-bg: #fde8e6;
+  --ok-bg: #e0f3ea;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.topbar {
+  background: var(--brand-dark);
+  color: #fff;
+  padding: 1.75rem 1.25rem 1.5rem;
+}
+.topbar h1 { margin: 0; font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; }
+.topbar p { margin: 0.25rem 0 0; opacity: 0.85; }
+
+.layout {
+  max-width: 1050px;
+  margin: 1.5rem auto;
+  padding: 0 1rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+.panel h2 { margin: 0 0 1rem; font-size: 1.25rem; }
+.panel h3 { margin: 1.5rem 0 0.5rem; font-size: 1rem; }
+
+label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.25rem; color: var(--muted); }
+
+input, select, button { font: inherit; }
+input, select {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+}
+input:focus-visible, select:focus-visible, button:focus-visible {
+  outline: 3px solid #7cc4a8;
+  outline-offset: 1px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+}
+button:hover { background: var(--brand-dark); }
+button.ghost { background: transparent; color: var(--danger); border: 1px solid var(--line); }
+button.ghost:hover { background: var(--danger-bg); }
+
+.row { display: flex; gap: 0.5rem; }
+.row input { flex: 1; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 1.25rem 0 1rem;
+}
+.stat-label { display: block; font-size: 0.8rem; color: var(--muted); }
+.stats strong { font-size: 1.1rem; }
+
+.meter { height: 14px; background: var(--line); border-radius: 7px; overflow: hidden; }
+#meter-fill { height: 100%; width: 0; background: var(--brand); transition: width 0.4s ease, background 0.3s; }
+#meter-fill.warning { background: var(--warn); }
+#meter-fill.over { background: var(--danger); }
+
+.status { margin: 0.75rem 0 0; padding: 0.6rem 0.8rem; border-radius: 6px; font-weight: 600; }
+.status.neutral { background: #f1f4f2; color: var(--muted); }
+.status.safe { background: var(--ok-bg); color: var(--brand-dark); }
+.status.warning { background: var(--warn-bg); color: var(--warn); }
+.status.over { background: var(--danger-bg); color: var(--danger); }
+
+.category-list { list-style: none; margin: 0; padding: 0; }
+.category-list li { margin-bottom: 0.6rem; }
+.cat-head { display: flex; justify-content: space-between; font-size: 0.9rem; }
+.cat-bar { height: 6px; background: var(--line); border-radius: 3px; margin-top: 0.25rem; }
+.cat-bar span { display: block; height: 100%; background: var(--brand); border-radius: 3px; }
+
+.expense-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  align-items: end;
+  margin-bottom: 1.25rem;
+}
+.expense-form .field:first-child { grid-column: 1 / -1; }
+.add-btn { align-self: end; }
+.form-error { grid-column: 1 / -1; margin: 0; min-height: 1.2em; color: var(--danger); font-size: 0.9rem; font-weight: 600; }
+
+.list-tools {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding-top: 1rem; border-top: 1px solid var(--line);
+}
+.list-tools label { margin: 0; }
+.list-tools select { width: auto; flex: 1; }
+
+.expense-list { list-style: none; margin: 1rem 0 0; padding: 0; }
+.expense-list li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.exp-name { font-weight: 600; }
+.exp-meta { display: block; font-size: 0.8rem; color: var(--muted); }
+.exp-amount { font-weight: 800; }
+.delete-btn { background: transparent; color: var(--danger); padding: 0.3rem 0.6rem; border: 1px solid var(--line); }
+.delete-btn:hover { background: var(--danger-bg); }
+.empty { color: var(--muted); padding: 1rem 0; }
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
